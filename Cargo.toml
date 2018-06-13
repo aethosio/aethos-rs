@@ -1,7 +1,8 @@
-[package]
-name = "aethos"
+[workspace]
 version = "0.1.0"
-authors = ["Grunt Coder <gruntcoder@aethos.io>"]
-license = "MIT"
+authors = ["Grunt Code <gruntcoder@aethos.io"]
 
-[dependencies]
+members = [
+  "frontend",
+  "nexus"
+]

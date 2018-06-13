@@ -1,0 +1,8 @@
+[package]
+name = "frontend"
+version = "0.1.0"
+authors = ["Grunt Coder <gruntcoder@aethos.io>"]
+
+[dependencies]
+nexus = { path = "../nexus" }
+
