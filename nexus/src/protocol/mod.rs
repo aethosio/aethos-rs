@@ -1,23 +1,21 @@
-mod http;
+pub mod http_server;
 
-pub use self::http::*;
+pub use self::http_server::*;
 
 /**
  * Public types
  */
-pub struct Protocol(inner::Protocol);
+pub trait Protocol {
+
+}
 
 /**
  * Private implementation
  */
 mod inner {
-pub struct Protocol {}
-impl Protocol {}
 }
 
 /**
  * Public proxies for newtypes 
  */
-impl Protocol {
-
-}
+struct undef {}

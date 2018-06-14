@@ -15,12 +15,11 @@ mod inner {
  * Container
  */
 pub struct Container {
-    x: i32
 }
 
 impl Container {
     pub fn new() -> Container {
-        Container{ x: 0 }
+        Container{}
     }    
 }
 
@@ -34,8 +33,9 @@ impl ContainerBuilder {
     pub fn listen(&mut self, endpoint: super::Channel) {
         self.channels.push(endpoint);
     }
-    pub fn protocol(&mut self, protocol: super::Protocol) {
+    pub fn protocol(&mut self, protocol: &super::Protocol) {
         // TODO Implement
+        unimplemented!();
     }
 }
 }
@@ -59,9 +59,19 @@ impl ContainerBuilder {
         inner.listen(channel);
         ContainerBuilder(inner)
     }
-    pub fn protocol(self, protocol: Protocol) -> ContainerBuilder {
+    pub fn protocol(self, protocol: &Protocol) -> ContainerBuilder {
         let ContainerBuilder(mut inner) = self;
         inner.protocol(protocol);
         ContainerBuilder(inner)
+    }
+
+    pub fn inbound(self, channel: Channel) -> ContainerBuilder {
+        let ContainerBuilder(mut inner) = self;
+        unimplemented!();
+        ContainerBuilder(inner)
+    }
+
+    pub fn build(self) -> Container {
+        unimplemented!();
     }
 }

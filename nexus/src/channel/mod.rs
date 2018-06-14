@@ -1,3 +1,6 @@
+
+use super::protocol::{ Protocol };
+
 /**
  * Public types
  */
@@ -21,6 +24,11 @@ impl ChannelBuilder {
   }
   pub fn listen(&mut self, address : String) {
     // TODO Implement
+    unimplemented!();
+  }
+  pub fn protocol(&mut self, protocol: &super::Protocol)   {
+    // TODO Implement
+    unimplemented!();
   }
 }
 }
@@ -36,9 +44,18 @@ impl Channel {
 
 impl ChannelBuilder {
     pub fn listen(self, address : String) -> ChannelBuilder {
-      // TODO implement
       let ChannelBuilder(mut inner) = self;
       inner.listen(address);
       ChannelBuilder(inner)
+    }
+
+    pub fn protocol(self, protocol: &Protocol) -> ChannelBuilder {
+      let ChannelBuilder(mut inner) = self;
+      inner.protocol(protocol);
+      ChannelBuilder(inner)
+    }
+
+    pub fn build(self) -> Channel {
+      unimplemented!();
     }
 }
