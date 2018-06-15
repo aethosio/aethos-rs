@@ -26,7 +26,7 @@ impl ChannelBuilder {
     // TODO Implement
     unimplemented!();
   }
-  pub fn protocol(&mut self, protocol: &super::Protocol)   {
+  pub fn protocol(&mut self, protocol: Box<super::Protocol>)   {
     // TODO Implement
     unimplemented!();
   }
@@ -49,7 +49,7 @@ impl ChannelBuilder {
       ChannelBuilder(inner)
     }
 
-    pub fn protocol(self, protocol: &Protocol) -> ChannelBuilder {
+    pub fn protocol(self, protocol: Box<Protocol>) -> ChannelBuilder {
       let ChannelBuilder(mut inner) = self;
       inner.protocol(protocol);
       ChannelBuilder(inner)

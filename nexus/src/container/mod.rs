@@ -54,16 +54,16 @@ impl Container {
 }
 
 impl ContainerBuilder {
-    pub fn listen(self, channel: Channel) -> ContainerBuilder {
-        let ContainerBuilder(mut inner) = self;
-        inner.listen(channel);
-        ContainerBuilder(inner)
-    }
-    pub fn protocol(self, protocol: &Protocol) -> ContainerBuilder {
-        let ContainerBuilder(mut inner) = self;
-        inner.protocol(protocol);
-        ContainerBuilder(inner)
-    }
+    // pub fn listen(self, channel: Channel) -> ContainerBuilder {
+    //     let ContainerBuilder(mut inner) = self;
+    //     inner.listen(channel);
+    //     ContainerBuilder(inner)
+    // }
+    // pub fn protocol(self, protocol: &Protocol) -> ContainerBuilder {
+    //     let ContainerBuilder(mut inner) = self;
+    //     inner.protocol(protocol);
+    //     ContainerBuilder(inner)
+    // }
 
     pub fn inbound(self, channel: Channel) -> ContainerBuilder {
         let ContainerBuilder(mut inner) = self;

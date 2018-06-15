@@ -1,3 +1,4 @@
+use std::net::{ToSocketAddrs};
 use super::Endpoint;
 
 /**
@@ -21,6 +22,9 @@ impl TCPSocketBuilder {
   pub fn new() -> TCPSocketBuilder {
     TCPSocketBuilder{}
   }
+  pub fn bind<A: super::ToSocketAddrs>(&mut self, addrs: A) {
+    unimplemented!();
+  }
 }
 }
 
@@ -30,6 +34,18 @@ impl TCPSocketBuilder {
 impl TCPSocket {
   pub fn builder() -> TCPSocketBuilder {
     TCPSocketBuilder(inner::TCPSocketBuilder::new())
+  }
+}
+
+impl TCPSocketBuilder {
+  pub fn bind<A: ToSocketAddrs>(self, addr: A) -> TCPSocketBuilder {
+    let TCPSocketBuilder(mut inner) = self;
+    inner.bind(addr);
+    TCPSocketBuilder(inner)
+  }
+
+  pub fn build(self) -> Box<TCPSocket> {
+    unimplemented!();
   }
 }
 

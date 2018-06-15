@@ -1,3 +1,6 @@
+pub mod tcp_socket;
+
+pub use self::tcp_socket::*;
 
 /**
  * Endpoint
