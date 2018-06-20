@@ -1,7 +1,7 @@
 extern crate nexus;
 
 use nexus::{Container, Channel, AppServer};
-use nexus::protocol::{HttpServer};
+use nexus::protocol::http;
 use nexus::endpoint::{TCPSocket};
 use nexus::router::{HttpRouter, FutureResponse};
 
@@ -10,7 +10,7 @@ fn main() {
     .bind("127.0.0.1:3000")
     .build();
 
-  let http_server = HttpServer::builder()
+  let http_server = http::Server::builder()
     .listen(socket)
     .build();
 

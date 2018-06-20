@@ -1,7 +1,5 @@
-extern crate hyper;
 extern crate route_recognizer as recognizer;
 extern crate futures;
-extern crate http;
 
 pub mod channel;
 pub mod container;

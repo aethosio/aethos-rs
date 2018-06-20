@@ -1,7 +1,14 @@
-pub mod http_server;
-
-pub use self::http_server::*;
+pub mod http;
 
 pub trait Protocol {
 
 }
+
+pub trait Request {
+
+}
+
+pub trait Response {
+  
+}
+
